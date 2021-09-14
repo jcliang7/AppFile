@@ -1,0 +1,3 @@
+Android is, innovative apps and games for the mobile terminal can be built in the Java language environment, provides an application framework that fulfilling.
+
+The documents that are displayed on the left side of the navigation, detailed how to build an app using a variety of Android API are listed.
