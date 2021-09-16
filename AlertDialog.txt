@@ -1,0 +1,13 @@
+    private void openOptionsDialog() {
+        AlertDialog.Builder build = new AlertDialog.Builder(MainActivity.this);
+        build.setTitle(R.string.dialog_title)
+                .setMessage(R.string.dialog_message)
+                .setPositiveButton(R.string.dialog_btn_confirm, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        //System.out.println("按下確認");
+                    }
+                })
+                .setNegativeButton(R.string.dialog_btn_cancel, null)
+                .show();
+    }

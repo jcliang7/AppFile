@@ -1,0 +1,19 @@
+   private void openOptionsDialog() {
+        final ProgressDialog progressDialog =
+                ProgressDialog.show(MainActivity.this,
+                        "處理中...", "請等一會，處理完畢會自動結束...");
+
+        Thread thread = new Thread() {
+            @Override
+            public void run() {
+                try {
+                    Thread.sleep(5000);
+                } catch (InterruptedException e)
+                {
+                    e.printStackTrace();
+                }
+                progressDialog.dismiss();
+            }
+        };
+        thread.start();
+    }

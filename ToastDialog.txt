@@ -1,0 +1,4 @@
+    private void openOptionsDialog(){
+        Toast.makeText(MainActivity.this, "這是一個 Tost", Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, "這是另一個 Tost", Toast.LENGTH_SHORT).show();
+    }
