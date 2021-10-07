@@ -1,0 +1,22 @@
+    public static final String PREF = "BMI_PREF";
+    public static final String PREF_HEIGHT = "BMI_Height";
+
+    // Restore preferences
+    private void restorePrefs() {
+        SharedPreferences settings = getSharedPreferences(PREF, 0);
+        String pref_height = settings.getString(PREF_HEIGHT, "");
+        if (!"".equals(pref_height))
+        {
+            field_height.setText(pref_height);
+            field_weight.requestFocus();
+        }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        // Save user preferences. use Editor object to make changes.
+        SharedPreferences settings = getSharedPreferences(PREF, 0);
+        settings.edit().putString(PREF_HEIGHT, field_height.
+            getText().toString()).commit();
+    }

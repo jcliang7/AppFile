@@ -1,0 +1,33 @@
+    private void showNotification()
+    {
+
+        NotificationManager notifyer = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+        Intent intent = new Intent(this, Bmi.class);
+
+        PendingIntent pendingIntent = PendingIntent.getActivity(
+                this,
+                0,
+                intent
+                , PendingIntent.FLAG_UPDATE_CURRENT
+        );
+
+        String CHANNEL_ID = "my_channel_01";
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            int importance = NotificationManager.IMPORTANCE_NONE;
+            NotificationChannel mChannel = new NotificationChannel(CHANNEL_ID, "my_channel", importance);
+            mChannel.setDescription("This is my channel");
+            mChannel.enableLights(true);
+            mChannel.setLightColor(Color.RED);
+            notifyer.createNotificationChannel(mChannel);
+        }
+
+        Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setContentTitle("BMI值過高")
+                .setContentText("通知監督人")
+                .setSmallIcon(android.R.drawable.stat_notify_error)
+                .setContentIntent(pendingIntent)
+                .build();
+
+        notifyer.notify(0, notification);
+    }
