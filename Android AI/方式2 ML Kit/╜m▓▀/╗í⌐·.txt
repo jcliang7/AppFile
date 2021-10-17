@@ -1,0 +1,3 @@
+1. 將 MyVisionApiKey.java 和 VisionHandler.java 刪除
+
+2. 在 GalleryActivity.java 中將 VisionHandler 相關程式替換成 MLKitAPI

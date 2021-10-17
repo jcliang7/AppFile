@@ -1,0 +1,15 @@
+https://cloud.google.com/apis/
+https://cloud.google.com/pricing/list
+
+由於內建AI在做 object detection (只有分類，不會辨識物件名稱)，常常容易辨識失敗，
+建議啟用多物件辨識(enableMultipleObjects( ))，不然就是要自行訓練模型
+https://developers.google.com/ml-kit/vision/object-detection/android
+
+
+Image Labeling可以辨識物件名稱
+https://developers.google.com/ml-kit/vision/image-labeling/android
+
+
+自行訓練模型
+Label images with a custom model on Android
+https://developers.google.com/ml-kit/vision/image-labeling/custom-models/android
